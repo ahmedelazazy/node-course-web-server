@@ -13,9 +13,9 @@ app.use(express.static(__dirname + '/public'));
 
 hbs.registerHelper('getYear', () => new Date().getFullYear());
 
-app.use((req, res, next) => {
-  res.render('maintenance.hbs', { title: 'Maintenance' });
-});
+// app.use((req, res, next) => {
+//   res.render('maintenance.hbs', { title: 'Maintenance' });
+// });
 
 app.get('/', function (req, res) {
   res.render('welcome.hbs', {
@@ -27,6 +27,12 @@ app.get('/', function (req, res) {
 app.get('/about', function (req, res) {
   res.render('about.hbs', {
     title: 'About'
+  })
+})
+
+app.get('/projects', function (req, res) {
+  res.render('projects.hbs', {
+    title: 'My Projects'
   })
 })
 
